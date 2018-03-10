@@ -1,12 +1,24 @@
 ﻿using System;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using UtilityFramework.Application;
+using UtilityFramework.Application.ViewModels;
+using UtilityFramework.TestApplication.Data;
+using UtilityFramework.TestApplication.Data.Repository.Interface;
 
 namespace UtilityFramework.TestApplication.Controllers
 {
     [Route("api/v1/[controller]")]
     public class ValuesController : Controller
     {
+
+        private readonly IUserRepository _userRepository;
+
+        public ValuesController(IUserRepository userRepository)
+        {
+            _userRepository = userRepository;
+        }
+
 
         /// <summary>
         /// DESCRIPTION METHOD
@@ -27,6 +39,13 @@ namespace UtilityFramework.TestApplication.Controllers
         {
             try
             {
+                _userRepository.Create(new User()
+                {
+                    Login = "Fabricio",
+                    Password = "123123412"
+                });
+
+
                 return Ok(Utilities.ReturnSuccess());
             }
             catch (Exception ex)

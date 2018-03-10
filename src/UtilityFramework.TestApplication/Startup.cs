@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Swashbuckle.AspNetCore.Swagger;
+using UtilityFramework.TestApplication.Data.Repository;
+using UtilityFramework.TestApplication.Data.Repository.Interface;
 
 namespace UtilityFramework.TestApplication
 {
@@ -20,6 +22,8 @@ namespace UtilityFramework.TestApplication
         {
             services.AddMvc();
             services.AddSwaggerGen(c => { c.SwaggerDoc("v1", new Info { Title = "Contacts API", Version = "v1" }); });
+
+            services.AddSingleton(typeof(IUserRepository), typeof(UserRepository));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -1,6 +1,5 @@
 ﻿using MongoDB.Driver.Builders;
 using UtilityFramework.TestApplication.Data.Repository.Interface;
-using UtilityFramework.Data.Repository;
 
 namespace UtilityFramework.TestApplication.Data.Repository
 {

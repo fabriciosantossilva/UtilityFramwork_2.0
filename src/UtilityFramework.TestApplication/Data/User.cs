@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using UtilityFramework.Data.Repository.Models;
+﻿using UtilityFramework.Data.Repository.Models;
 
 namespace UtilityFramework.TestApplication.Data
 {

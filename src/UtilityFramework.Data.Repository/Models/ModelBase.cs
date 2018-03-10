@@ -1,3 +1,7 @@
+using System;
+using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
+
 namespace UtilityFramework.Data.Repository.Models {
     [BsonIgnoreExtraElements]
     public abstract class ModelBase {
